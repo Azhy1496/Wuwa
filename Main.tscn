@@ -306,6 +306,41 @@ size_flags_horizontal = 3
 [node name="Time" type="Label" parent="MainUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=689826895]
 layout_mode = 2
 
+[node name="ProbabilityButton" type="Button" parent="MainUI" unique_id=582221062]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 0
+offset_left = 150.0
+offset_top = 900.0
+offset_right = 230.0
+offset_bottom = 931.0
+text = "抽卡概率"
+
+[node name="ProbabilityWindow" type="Window" parent="MainUI" unique_id=412484996]
+oversampling_override = 1.0
+title = "抽卡概率表"
+position = Vector2i(150, 800)
+size = Vector2i(300, 150)
+visible = false
+exclusive = true
+popup_window = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainUI/ProbabilityWindow" unique_id=906181524]
+offset_right = 142.0
+offset_bottom = 77.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MainUI/ProbabilityWindow/VBoxContainer" unique_id=981928116]
+layout_mode = 2
+text = "五星概率0.8%"
+
+[node name="Label2" type="Label" parent="MainUI/ProbabilityWindow/VBoxContainer" unique_id=697779035]
+layout_mode = 2
+text = "四星角色概率6%"
+
+[node name="Label3" type="Label" parent="MainUI/ProbabilityWindow/VBoxContainer" unique_id=536126076]
+layout_mode = 2
+text = "三星角色概率93.2%"
+
 [connection signal="pressed" from="MainUI/LeftMenu/CharacterBannerBtn" to="MainUI" method="_on_character_banner_btn_pressed"]
 [connection signal="pressed" from="MainUI/LeftMenu/WeaponBannerBtn" to="MainUI" method="_on_weapon_banner_btn_pressed"]
 [connection signal="pressed" from="MainUI/LeftMenu/StandardBannerBtn" to="MainUI" method="_on_standard_banner_btn_pressed"]

@@ -21,6 +21,15 @@ var up_weapon = "千古洑流"
 @onready var banner_name = $MainUI/BannerName
 @onready var title_label = $MainUI/TitleLabel
 @onready var weaponBox = get_node("MainUI/weaponBox")
+@onready var prob_button = $MainUI/ProbabilityButton   # 你的“概率表”按钮
+@onready var prob_window = $MainUI/ProbabilityWindow   # Window 节点
+func _show_probability_window():
+	prob_window.visible = true   
+   # 也可以使用 prob_window.popup() 在鼠标位置弹出
+# 处理窗口关闭请求的回调函数
+func _on_window_close_requested():
+	# 将窗口隐藏或删除（通常使用 hide() 较多）
+	prob_window.hide()
 func switch_to_character_banner():
 	current_banner = "character"
 	up_character = "仇远"
@@ -130,6 +139,8 @@ func _ready():
 	$MainUI/LeftMenu/CharacterBannerBtn.pressed.connect(switch_to_character_banner)
 	$MainUI/LeftMenu/WeaponBannerBtn.pressed.connect(switch_to_weapon_banner)
 	$MainUI/LeftMenu/StandardBannerBtn.pressed.connect(switch_to_standard_banner)
+	$MainUI/ProbabilityButton.pressed.connect(_show_probability_window)
+	prob_window.close_requested.connect(_on_window_close_requested)
 	update_guarantee_text(guarantee_character)
 	weaponBox.visible = false
 	weaponSelect()
