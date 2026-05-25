@@ -1,0 +1,281 @@
+[gd_scene format=3 uid="uid://bouxoceap0fh8"]
+
+[ext_resource type="Texture2D" uid="uid://dtt3ye8m3fbbk" path="res://assets/backgrounds/background.png" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://dsjr6gwvegr1e" path="res://assets/characters/character.jpg" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://b6d3mndf3gcej" path="res://scripts/record_list.gd" id="3_r0du0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu6xs"]
+bg_color = Color(0.0627451, 0.08235294, 0.12156863, 0.8)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.56078434, 0.8745098, 1, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0du0"]
+bg_color = Color(0.03529412, 0.06666667, 0.11372549, 0.8)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.30980393, 0.41960785, 0.61960787, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm0pq"]
+bg_color = Color(0.039215688, 0.08235294, 0.13333334, 0.8)
+border_color = Color(0.3529412, 0.4862745, 0.6901961, 0.6666667)
+shadow_color = Color(0, 0, 0, 0.4)
+shadow_size = 4
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1823620688]
+
+[node name="RootUI" type="Control" parent="." unique_id=1744338539]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="RootUI" unique_id=1505329716]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_glv2v")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="DarkOverlay" type="ColorRect" parent="RootUI" unique_id=722950900]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="BannerPanel" type="Panel" parent="RootUI" unique_id=209139759]
+custom_minimum_size = Vector2(1300, 800)
+layout_mode = 0
+offset_left = 300.0
+offset_top = 120.0
+offset_right = 1400.0
+offset_bottom = 820.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu6xs")
+
+[node name="CharacterImage" type="TextureRect" parent="RootUI/BannerPanel" unique_id=1701205904]
+layout_direction = 3
+layout_mode = 0
+offset_right = 649.0
+offset_bottom = 1129.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_uu6xs")
+
+[node name="GradientOverlay" type="ColorRect" parent="RootUI/BannerPanel" unique_id=480658800]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 200.0
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="CharacterInfo" type="VBoxContainer" parent="RootUI/BannerPanel" unique_id=1730627026]
+layout_mode = 1
+offset_right = 156.0
+offset_bottom = 58.0
+
+[node name="TitleLable" type="Label" parent="RootUI/BannerPanel/CharacterInfo" unique_id=1370842235]
+layout_mode = 2
+text = "深海回想"
+
+[node name="DescLabel" type="RichTextLabel" parent="RootUI/BannerPanel/CharacterInfo" unique_id=2048037751]
+custom_minimum_size = Vector2(40, 100)
+layout_mode = 2
+text = "活动说明：每10次唤取必得4星以上物品，最多80次唤取必得5星角色"
+
+[node name="TimeLabel" type="Label" parent="RootUI/BannerPanel/CharacterInfo" unique_id=1650834309]
+layout_mode = 2
+text = "剩余时间：20天7小时"
+
+[node name="StarContainer" type="HBoxContainer" parent="RootUI/BannerPanel/CharacterInfo" unique_id=1987059563]
+layout_mode = 2
+
+[node name="Star2" type="TextureRect" parent="RootUI/BannerPanel/CharacterInfo/StarContainer" unique_id=1426513921]
+layout_mode = 2
+
+[node name="Star3" type="TextureRect" parent="RootUI/BannerPanel/CharacterInfo/StarContainer" unique_id=1787254616]
+layout_mode = 2
+
+[node name="Star" type="TextureRect" parent="RootUI/BannerPanel/CharacterInfo/StarContainer" unique_id=573906130]
+layout_mode = 2
+
+[node name="Star4" type="TextureRect" parent="RootUI/BannerPanel/CharacterInfo/StarContainer" unique_id=363575962]
+layout_mode = 2
+
+[node name="Star5" type="TextureRect" parent="RootUI/BannerPanel/CharacterInfo/StarContainer" unique_id=1993719801]
+layout_mode = 2
+
+[node name="RightPanel" type="Panel" parent="RootUI" unique_id=1582228385]
+layout_mode = 1
+offset_left = 1630.0
+offset_top = 120.0
+offset_right = 1950.0
+offset_bottom = 840.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r0du0")
+
+[node name="MainVBox" type="VBoxContainer" parent="RootUI/RightPanel" unique_id=1876599799]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 58.0
+grow_horizontal = 2
+
+[node name="PityPanel" type="PanelContainer" parent="RootUI/RightPanel/MainVBox" unique_id=1412339757]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm0pq")
+
+[node name="MarginContainer" type="MarginContainer" parent="RootUI/RightPanel/MainVBox/PityPanel" unique_id=1459542560]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="PityVbox" type="VBoxContainer" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer" unique_id=447180682]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Label" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox" unique_id=1107926608]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.90588236, 0.9647059, 1)
+theme_override_font_sizes/font_size = 24
+text = "保底说明"
+
+[node name="FiveStarRow" type="HBoxContainer" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox" unique_id=464233508]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FiveStarRow" unique_id=356724614]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.90588236, 0.9647059, 1)
+theme_override_font_sizes/font_size = 24
+text = "5星保底"
+
+[node name="Spacer" type="Control" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FiveStarRow" unique_id=2089544333]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueLabel" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FiveStarRow" unique_id=87415116]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.7647059, 0.47843137, 1)
+theme_override_font_sizes/font_size = 24
+text = "60/80"
+
+[node name="FourStarRow" type="HBoxContainer" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox" unique_id=370453516]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FourStarRow" unique_id=1496287548]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.90588236, 0.9647059, 1)
+theme_override_font_sizes/font_size = 24
+text = "4星保底"
+
+[node name="Spacer" type="Control" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FourStarRow" unique_id=1215210182]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueLabel" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/FourStarRow" unique_id=1217531650]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9019608, 0.7647059, 0.47843137, 1)
+theme_override_font_sizes/font_size = 24
+text = "6/10"
+
+[node name="BigPityRow" type="HBoxContainer" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox" unique_id=1982131020]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/BigPityRow" unique_id=1492385352]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.90588236, 0.9647059, 1)
+theme_override_font_sizes/font_size = 24
+text = "大保底"
+
+[node name="Spacer" type="Control" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/BigPityRow" unique_id=1401846963]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueLabel" type="Label" parent="RootUI/RightPanel/MainVBox/PityPanel/MarginContainer/PityVbox/BigPityRow" unique_id=1733909807]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.34509805, 0.8392157, 0.5529412, 1)
+theme_override_font_sizes/font_size = 24
+text = "已触发"
+
+[node name="RecentPanel" type="PanelContainer" parent="RootUI/RightPanel/MainVBox" unique_id=1870861235]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel" unique_id=510866121]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="RecentVBox" type="VBoxContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer" unique_id=1389991382]
+layout_mode = 2
+
+[node name="TopBar" type="HBoxContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox" unique_id=1062305900]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/TopBar" unique_id=968807671]
+layout_mode = 2
+text = "近期记录"
+
+[node name="Control" type="Control" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/TopBar" unique_id=2075232758]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/TopBar" unique_id=365130754]
+layout_mode = 2
+text = "更多>>"
+
+[node name="RecordScroll" type="ScrollContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox" unique_id=1833757514]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+
+[node name="RecordList" type="VBoxContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll" unique_id=61922310]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+script = ExtResource("3_r0du0")
+
+[node name="RecordRow" type="HBoxContainer" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList" unique_id=636271702]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=364811830]
+layout_mode = 2
+text = "秋水"
+
+[node name="Spacer2" type="Control" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=967595928]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Rarity" type="Label" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=1676984577]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6627451, 0.4392157, 1, 1)
+text = "4星"
+
+[node name="Spacer" type="Control" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=1828380297]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Time" type="Label" parent="RootUI/RightPanel/MainVBox/RecentPanel/MarginContainer/RecentVBox/RecordScroll/RecordList/RecordRow" unique_id=1154093144]
+layout_mode = 2
+text = "2分钟前"
