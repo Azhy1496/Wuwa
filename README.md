@@ -11,12 +11,13 @@
 \## 截图展示
 
 up角色
-<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/5e9109c7-ddde-4f70-b3ff-940680cea093" />
-常驻武器
-<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/48b21f79-b1fa-4a42-9416-9b9c1155de52" />
-常驻角色
-<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/3f9b2980-4c6f-4db2-aac6-74c2a89f9dbe" />
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/2e77a20d-ff03-4f88-9333-da2344460fa2" />
 
+常驻武器
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/b56b09e6-927e-44c2-8e5e-63d7bfee9dd9" />
+
+常驻角色
+<img width="1980" height="1080" alt="image" src="https://github.com/user-attachments/assets/975a42c5-e878-4ee8-90e0-e784d058fe35" />
 
 \## ▶️ 如何运行
 
